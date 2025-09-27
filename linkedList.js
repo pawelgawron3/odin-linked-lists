@@ -100,6 +100,19 @@ class LinkedList {
       return false;
     }
   }
+
+  find(value) {
+    let k = 0;
+    let currentNode = this.headNode;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return k;
+      }
+      currentNode = currentNode.nextNode;
+      k++;
+    }
+    return null;
+  }
 }
 
 export { LinkedList };
