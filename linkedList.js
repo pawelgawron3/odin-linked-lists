@@ -54,6 +54,20 @@ class LinkedList {
       return currentNode.value;
     }
   }
+
+  at(index) {
+    let k = 0;
+    let currentNode = this.headNode;
+    while (currentNode) {
+      if (index === k) {
+        return currentNode.value;
+      }
+      currentNode = currentNode.nextNode;
+      k++;
+    }
+
+    return "There is no such index with node in this LinkedList!";
+  }
 }
 
 export { LinkedList };
