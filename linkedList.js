@@ -156,6 +156,35 @@ class LinkedList {
 
     console.log("Index out of bounds");
   }
+
+  removeAt(index) {
+    if (index < 0) {
+      console.log("Index out of bounds");
+      return;
+    }
+
+    if (this.headNode === null) {
+      return;
+    }
+
+    if (index === 0) {
+      this.headNode = this.headNode.nextNode;
+      return;
+    }
+
+    let k = 0;
+    let currentNode = this.headNode;
+    while (currentNode && currentNode.nextNode !== null) {
+      if (index === k + 1) {
+        currentNode.nextNode = currentNode.nextNode.nextNode;
+        return;
+      }
+      k++;
+      currentNode = currentNode.nextNode;
+    }
+
+    console.log("Index out of bounds");
+  }
 }
 
 export { LinkedList };
