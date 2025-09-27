@@ -68,6 +68,23 @@ class LinkedList {
 
     return "There is no such index with node in this LinkedList!";
   }
+
+  pop() {
+    if (this.headNode === null) {
+      return;
+    } else if (this.headNode !== null && this.headNode.nextNode === null) {
+      this.headNode = null;
+    } else {
+      let currentNode = this.headNode;
+      while (
+        currentNode.nextNode !== null &&
+        currentNode.nextNode.nextNode !== null
+      ) {
+        currentNode = currentNode.nextNode;
+      }
+      currentNode.nextNode = null;
+    }
+  }
 }
 
 export { LinkedList };
