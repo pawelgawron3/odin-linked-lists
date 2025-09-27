@@ -128,6 +128,34 @@ class LinkedList {
       return result;
     }
   }
+
+  // additional methods
+  insertAt(value, index) {
+    let k = 0;
+
+    if (index === 0) {
+      if (this.headNode === null) {
+        this.headNode = new Node(value);
+      } else {
+        prevHeadNode = this.headNode;
+        this.headNode = new Node(value, prevHeadNode);
+      }
+      return;
+    }
+
+    let currentNode = this.headNode;
+    while (currentNode) {
+      if (index === k + 1) {
+        let oldNode = currentNode.nextNode;
+        currentNode.nextNode = new Node(value, oldNode);
+        return;
+      }
+      k++;
+      currentNode = currentNode.nextNode;
+    }
+
+    console.log("Index out of bounds");
+  }
 }
 
 export { LinkedList };
