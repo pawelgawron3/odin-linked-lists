@@ -39,3 +39,5 @@ class LinkedList {
     }
   }
 }
+
+export { LinkedList };
