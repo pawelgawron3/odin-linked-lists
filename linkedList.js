@@ -85,6 +85,21 @@ class LinkedList {
       currentNode.nextNode = null;
     }
   }
+
+  contains(value) {
+    if (this.headNode === null) {
+      return false;
+    } else {
+      let currentNode = this.headNode;
+      while (currentNode) {
+        if (currentNode.value === value) {
+          return true;
+        }
+        currentNode = currentNode.nextNode;
+      }
+      return false;
+    }
+  }
 }
 
 export { LinkedList };
